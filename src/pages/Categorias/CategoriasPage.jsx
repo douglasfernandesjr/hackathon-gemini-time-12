@@ -47,9 +47,10 @@ function CategoriasPage() {
 								alt={categoria.name}
 								className="imgCategory"
 							/>
-
-							<Typography className="textNames">{categoria.name}</Typography>
-							<Typography className="textNames">{categoria.total}</Typography>
+							<div className="name_total_card">
+								<Typography id="name" className="textNames">{categoria.name}</Typography>
+								<Typography id="total" className="textNames">{categoria.total}</Typography>
+							</div>
 						</div>
 					</Grid>
 				))}
