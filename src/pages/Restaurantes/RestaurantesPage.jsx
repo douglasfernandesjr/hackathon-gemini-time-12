@@ -34,51 +34,47 @@ function RestaurantesPage() {
         </div>
       )}
       <div className="sub-header">
-        <Typography variant="body1" color="primary">
+        <Typography className="titulo-preco" variant="body1" color="primary">
           Baratinho <span>(</span>$ <span>$ $ $ $)</span>
         </Typography>
       </div>
       {restaurantesBaratinho?.map(restaurante => (
-        <div key={restaurante.id}>
-          <img src={restaurante.imagem} alt="logo do restaurante"/> <br/>
-          Nome: {restaurante.nome} <br/>
-          Distância: {restaurante.distancia} <br/>
-          Nota: {restaurante.nota} <br/>
-          Tempo médio:{restaurante.tempo_medio} <br/>
-          Valor entrega: R$ {restaurante.valor_entrega} <br/>
+        <div className="cardBoard" key={restaurante.id}>
+          <img className="img" src={restaurante.imagem} alt="logo do restaurante"/> <br/>
+          {restaurante.nome} <br/>
+          {restaurante.distancia} km<br/>
+          {restaurante.nota} <br/>
+          {restaurante.tempo_medio}-{restaurante.valor_entrega} <br/>
           <br/>
-          
         </div>
       ))}
       <div className="sub-header">
-        <Typography variant="body1" color="primary">
+        <Typography className="titulo-preco" variant="body1" color="primary">
           No preço <span>(</span>$ $ $<span> $ $)</span>
         </Typography>
       </div>
       {restaurantesNoPreco?.map(restaurante => (
-        <div key={restaurante.id}>
-          <img src={restaurante.imagem} alt="logo do restaurante"/> <br/>
-          Nome: {restaurante.nome} <br/>
-          Distância: {restaurante.distancia} <br/>
-          Nota: {restaurante.nota} <br/>
-          Tempo médio:{restaurante.tempo_medio} <br/>
-          Valor entrega: R$ {restaurante.valor_entrega} <br/>
+        <div className="cardBoard" key={restaurante.id}>
+          <img className="img" src={restaurante.imagem} alt="logo do restaurante"/> <br/>
+          {restaurante.nome} <br/>
+          {restaurante.distancia} km<br/>
+          {restaurante.nota} <br/>
+          {restaurante.tempo_medio}-{restaurante.valor_entrega} <br/>
           <br/>
         </div>
       ))}
       <div className="sub-header">
-        <Typography variant="body1" color="primary">
+        <Typography className="titulo-preco" variant="body1" color="primary">
           Caro, mas vale a pena <span>(</span>$ $ $ $ $<span>)</span>
         </Typography>
       </div>
       {restaurantesCaro?.map(restaurante => (
-        <div key={restaurante.id}>
-          <img src={restaurante.imagem} alt="logo do restaurante"/> <br/>
-          Nome: {restaurante.nome} <br/>
-          Distância: {restaurante.distancia} <br/>
-          Nota: {restaurante.nota} <br/>
-          Tempo médio:{restaurante.tempo_medio} <br/>
-          Valor entrega: R$ {restaurante.valor_entrega} <br/>
+        <div className="cardBoard" key={restaurante.id}>
+          <img className="img"src={restaurante.imagem} alt="logo do restaurante"/> <br/>
+          {restaurante.nome} <br/>
+          {restaurante.distancia} km<br/>
+          {restaurante.nota} <br/>
+          {restaurante.tempo_medio}-{restaurante.valor_entrega} <br/>
           <br/>
         </div>
       ))}

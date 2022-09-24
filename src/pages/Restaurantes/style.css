@@ -1,3 +1,21 @@
 .restaurantes .sub-header span {
   color: #DEDDDD;
 }
+
+.restaurantes .img{
+  margin-left: 20px;
+  margin-right: 20px;
+  max-width: 95px;
+  max-height: 89px;
+}
+
+
+.restaurantes .titulo-preco{
+  margin-left: 25px;
+}
+
+.restaurantes .cardBoard{
+  display: flex;
+  
+  align-items: center;
+}
