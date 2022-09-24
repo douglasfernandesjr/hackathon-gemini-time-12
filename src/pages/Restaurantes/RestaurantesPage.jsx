@@ -48,7 +48,7 @@ function RestaurantesPage() {
           <div className="format-back">{restaurante.nome} <br />
             {restaurante.distancia} km<br />
             <img className="star_logo" src="https://cdn-icons-png.flaticon.com/512/148/148841.png" alt="star_logo" />{restaurante.nota} <br />
-            {restaurante.tempo_medio}-{restaurante.valor_entrega} <br />
+            {restaurante.tempo_medio} - R${restaurante.valor_entrega} de entrega<br />
             <br />
           </div>
         </div>
@@ -64,7 +64,7 @@ function RestaurantesPage() {
           <div className="format-back">{restaurante.nome} <br />
             {restaurante.distancia} km<br />
             <img className="star_logo" src="https://cdn-icons-png.flaticon.com/512/148/148841.png" alt="star_logo" />{restaurante.nota} <br />
-            {restaurante.tempo_medio}-{restaurante.valor_entrega} <br />
+            {restaurante.tempo_medio} - R${restaurante.valor_entrega} de entrega<br />
           </div>
           <br />
         </div>
@@ -81,7 +81,7 @@ function RestaurantesPage() {
             {restaurante.nome} <br />
             {restaurante.distancia} km<br />
             <img className="star_logo" src="https://cdn-icons-png.flaticon.com/512/148/148841.png" alt="star_logo" />{restaurante.nota} <br />
-            {restaurante.tempo_medio}-{restaurante.valor_entrega} <br />
+            {restaurante.tempo_medio} - R${restaurante.valor_entrega} de entrega <br />
             <br />
           </div>
 
