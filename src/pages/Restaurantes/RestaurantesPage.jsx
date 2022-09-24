@@ -41,11 +41,12 @@ function RestaurantesPage() {
       {restaurantesBaratinho?.map(restaurante => (
         <div className="cardBoard" key={restaurante.id}>
           <img className="img" src={restaurante.imagem} alt="logo do restaurante"/> <br/>
-          {restaurante.nome} <br/>
-          {restaurante.distancia} km<br/>
-          {restaurante.nota} <br/>
-          {restaurante.tempo_medio}-{restaurante.valor_entrega} <br/>
+          <div className="format-back">{restaurante.nome} <br/>
+            {restaurante.distancia} km<br/>
+            {restaurante.nota} <br/>
+            {restaurante.tempo_medio}-{restaurante.valor_entrega} <br/>
           <br/>
+          </div>
         </div>
       ))}
       <div className="sub-header">
@@ -56,10 +57,11 @@ function RestaurantesPage() {
       {restaurantesNoPreco?.map(restaurante => (
         <div className="cardBoard" key={restaurante.id}>
           <img className="img" src={restaurante.imagem} alt="logo do restaurante"/> <br/>
-          {restaurante.nome} <br/>
-          {restaurante.distancia} km<br/>
-          {restaurante.nota} <br/>
-          {restaurante.tempo_medio}-{restaurante.valor_entrega} <br/>
+          <div className="format-back">{restaurante.nome} <br/>
+            {restaurante.distancia} km<br/>
+            {restaurante.nota} <br/>
+            {restaurante.tempo_medio}-{restaurante.valor_entrega} <br/>
+          </div>
           <br/>
         </div>
       ))}
@@ -71,11 +73,15 @@ function RestaurantesPage() {
       {restaurantesCaro?.map(restaurante => (
         <div className="cardBoard" key={restaurante.id}>
           <img className="img"src={restaurante.imagem} alt="logo do restaurante"/> <br/>
-          {restaurante.nome} <br/>
-          {restaurante.distancia} km<br/>
-          {restaurante.nota} <br/>
-          {restaurante.tempo_medio}-{restaurante.valor_entrega} <br/>
+          <div className="format-back">
+            {restaurante.nome} <br/>
+            {restaurante.distancia} km<br/>
+            {restaurante.nota} <br/>
+            {restaurante.tempo_medio}-{restaurante.valor_entrega} <br/>
           <br/>
+          </div>
+          
+          
         </div>
       ))}
     </Container>
