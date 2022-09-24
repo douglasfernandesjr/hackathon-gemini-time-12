@@ -40,6 +40,7 @@ function RestaurantesPage() {
       </div>
       {restaurantesBaratinho?.map(restaurante => (
         <div key={restaurante.id}>
+          <img src={restaurante.imagem} alt="logo do restaurante"/> <br/>
           Nome: {restaurante.nome} <br/>
           Distância: {restaurante.distancia} <br/>
           Nota: {restaurante.nota} <br/>
@@ -56,6 +57,7 @@ function RestaurantesPage() {
       </div>
       {restaurantesNoPreco?.map(restaurante => (
         <div key={restaurante.id}>
+          <img src={restaurante.imagem} alt="logo do restaurante"/> <br/>
           Nome: {restaurante.nome} <br/>
           Distância: {restaurante.distancia} <br/>
           Nota: {restaurante.nota} <br/>
@@ -71,6 +73,7 @@ function RestaurantesPage() {
       </div>
       {restaurantesCaro?.map(restaurante => (
         <div key={restaurante.id}>
+          <img src={restaurante.imagem} alt="logo do restaurante"/> <br/>
           Nome: {restaurante.nome} <br/>
           Distância: {restaurante.distancia} <br/>
           Nota: {restaurante.nota} <br/>
