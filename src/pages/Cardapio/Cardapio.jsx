@@ -7,27 +7,30 @@ import {
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { getAllCategorias } from "../../services/categorias.service";
+import { getDetalhes } from "../../services/cardapio.service";
 
 import "./styles.css";
 
 function CardapioPage() {
 	const navigate = useNavigate();
-	const [categorias, setCategorias] = useState([]);
+    const [cardapio, setCardapio] = useState([])
 	const [loading, setLoading] = useState(true);
-
-	const getCategorias = async () => {
-		const result = await getAllCategorias();
-		setCategorias(result.data);
-		setLoading(false);
-	};
+    const url = window.location.href;
+    const idDetalhes = url.split("/")[4];
+    console.log(cardapio.categoria)
 
 	useEffect(() => {
-		getCategorias();
-	}, []);
+        getDetalhes(idDetalhes).then((response) => {
+          setCardapio(response.cardapio)
+          setLoading(false);
+        })
+      }, );
+
 	return (
-		<Container className="categorias">
+		<Container className="detalhes">
 			<Typography variant="h5" align="center" color="primary" className="title">
-				RESTAURANTES
+				RESTAURANTES:
+            
 			</Typography>
 			{loading && (
 				<div className="loading">
@@ -36,20 +39,20 @@ function CardapioPage() {
 			)}
 
 			<Grid container spacing={1} className="gridContainer">
-				{categorias.map((categoria) => (
-					<Grid item xs={4} key={categoria.ID}>
+				{cardapio.map((detalhes) => (
+					<Grid item xs={4} key={cardapio.ID}>
 						<div
 							className="containerCategorias"
-							onClick={() => navigate(`/restaurantes/${categoria.ID}`)}
+							onClick={() => navigate(`/restaurantes/${detalhes.ID}`)}
 						>
 							<img
-								src={categoria.image + '.png'}
-								alt={categoria.name}
+								src={cardapio.image + '.png'}
+								alt={detalhes.name}
 								className="imgCategory"
 							/>
 							<div className="name_total_card">
-								<Typography id="name" className="textNames">{categoria.name}</Typography>
-								<Typography id="total" className="textNames">{categoria.total}</Typography>
+								<Typography id="name" className="textNames">{cardapio.categoria}</Typography>
+								<Typography id="total" className="textNames">{detalhes.total}</Typography>
 							</div>
 						</div>
 					</Grid>
