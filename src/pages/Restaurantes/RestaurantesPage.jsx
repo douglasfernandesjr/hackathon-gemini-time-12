@@ -1,6 +1,7 @@
 import { Container, Typography, CircularProgress } from "@material-ui/core";
 import { useEffect, useState } from "react";
 import { getRestaurantes } from "../../services/restaurantes.service";
+import { useNavigate } from "react-router-dom";
 import "./style.css";
 
 const url = "https://cdn-icons-png.flaticon.com/512/148/148841.png"
@@ -13,6 +14,7 @@ function RestaurantesPage() {
   const [loading, setLoading] = useState(true);
   const url = window.location.href;
   const idCategoria = url.split("/")[4];
+  const navigate = useNavigate();
   console.log(idCategoria);
 
   useEffect(() => {
@@ -41,7 +43,7 @@ function RestaurantesPage() {
         </Typography>
       </div>
       {restaurantesBaratinho?.map(restaurante => (
-        <div className="cardBoard" key={restaurante.id}>
+        <div onClick={() => navigate(`/cardapio/${restaurante.id}`)} className="cardBoard" key={restaurante.id}>
           <img className="img" src={restaurante.imagem} alt="logo do restaurante" /> <br />
           <div className="format-back">{restaurante.nome} <br />
             {restaurante.distancia} km<br />
@@ -57,7 +59,7 @@ function RestaurantesPage() {
         </Typography>
       </div>
       {restaurantesNoPreco?.map(restaurante => (
-        <div className="cardBoard" key={restaurante.id}>
+        <div onClick={() => navigate(`/cardapio/${restaurante.id}`)} className="cardBoard" key={restaurante.id}>
           <img className="img" src={restaurante.imagem} alt="logo do restaurante" /> <br />
           <div className="format-back">{restaurante.nome} <br />
             {restaurante.distancia} km<br />
@@ -73,7 +75,7 @@ function RestaurantesPage() {
         </Typography>
       </div>
       {restaurantesCaro?.map(restaurante => (
-        <div className="cardBoard" key={restaurante.id}>
+        <div onClick={() => navigate(`/cardapio/${restaurante.id}`)} className="cardBoard" key={restaurante.id}>
           <img className="img" src={restaurante.imagem} alt="logo do restaurante" /> <br />
           <div className="format-back">
             {restaurante.nome} <br />
