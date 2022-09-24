@@ -9,9 +9,12 @@ function RestaurantesPage() {
   const [restaurantesNoPreco, setRestaurantesNoPreco] = useState([]);
   const [restaurantesCaro, setRestaurantesCaro] = useState([]);
   const [loading, setLoading] = useState(true);
+  const url = window.location.href;
+  const idCategoria = url.split("/")[4];
+  console.log(idCategoria);
 
   useEffect(() => {
-    getRestaurantes().then((response) => {
+    getRestaurantes(idCategoria).then((response) => {
       setNomeCategoria(response.categoria)
       setRestaurantesBaratinho(response.baratinho);
       setRestaurantesNoPreco(response.no_preco);
@@ -36,6 +39,26 @@ function RestaurantesPage() {
         </Typography>
       </div>
       {restaurantesBaratinho?.map(restaurante => (
+        <div key={restaurante.id}>
+          {restaurante.nome}
+        </div>
+      ))}
+      <div className="sub-header">
+        <Typography variant="body1" color="primary">
+          No preço <span>(</span>$ $ $<span> $ $)</span>
+        </Typography>
+      </div>
+      {restaurantesNoPreco?.map(restaurante => (
+        <div key={restaurante.id}>
+          {restaurante.nome}
+        </div>
+      ))}
+      <div className="sub-header">
+        <Typography variant="body1" color="primary">
+          Caro, mas vale a pena <span>(</span>$ $ $ $ $<span>)</span>
+        </Typography>
+      </div>
+      {restaurantesCaro?.map(restaurante => (
         <div key={restaurante.id}>
           {restaurante.nome}
         </div>
