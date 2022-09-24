@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { getRestaurantes } from "../../services/restaurantes.service";
 import "./style.css";
 
+const url = "https://cdn-icons-png.flaticon.com/512/148/148841.png"
+
 function RestaurantesPage() {
   const [nomeCategoria, setNomeCategoria] = useState([]);
   const [restaurantesBaratinho, setRestaurantesBaratinho] = useState();
@@ -40,12 +42,12 @@ function RestaurantesPage() {
       </div>
       {restaurantesBaratinho?.map(restaurante => (
         <div className="cardBoard" key={restaurante.id}>
-          <img className="img" src={restaurante.imagem} alt="logo do restaurante"/> <br/>
-          <div className="format-back">{restaurante.nome} <br/>
-            {restaurante.distancia} km<br/>
-            {restaurante.nota} <br/>
-            {restaurante.tempo_medio}-{restaurante.valor_entrega} <br/>
-          <br/>
+          <img className="img" src={restaurante.imagem} alt="logo do restaurante" /> <br />
+          <div className="format-back">{restaurante.nome} <br />
+            {restaurante.distancia} km<br />
+            <img className="star_logo" src="https://cdn-icons-png.flaticon.com/512/148/148841.png" alt="star_logo" />{restaurante.nota} <br />
+            {restaurante.tempo_medio}-{restaurante.valor_entrega} <br />
+            <br />
           </div>
         </div>
       ))}
@@ -56,13 +58,13 @@ function RestaurantesPage() {
       </div>
       {restaurantesNoPreco?.map(restaurante => (
         <div className="cardBoard" key={restaurante.id}>
-          <img className="img" src={restaurante.imagem} alt="logo do restaurante"/> <br/>
-          <div className="format-back">{restaurante.nome} <br/>
-            {restaurante.distancia} km<br/>
-            {restaurante.nota} <br/>
-            {restaurante.tempo_medio}-{restaurante.valor_entrega} <br/>
+          <img className="img" src={restaurante.imagem} alt="logo do restaurante" /> <br />
+          <div className="format-back">{restaurante.nome} <br />
+            {restaurante.distancia} km<br />
+            <img className="star_logo" src="https://cdn-icons-png.flaticon.com/512/148/148841.png" alt="star_logo" />{restaurante.nota} <br />
+            {restaurante.tempo_medio}-{restaurante.valor_entrega} <br />
           </div>
-          <br/>
+          <br />
         </div>
       ))}
       <div className="sub-header">
@@ -72,16 +74,16 @@ function RestaurantesPage() {
       </div>
       {restaurantesCaro?.map(restaurante => (
         <div className="cardBoard" key={restaurante.id}>
-          <img className="img"src={restaurante.imagem} alt="logo do restaurante"/> <br/>
+          <img className="img" src={restaurante.imagem} alt="logo do restaurante" /> <br />
           <div className="format-back">
-            {restaurante.nome} <br/>
-            {restaurante.distancia} km<br/>
-            {restaurante.nota} <br/>
-            {restaurante.tempo_medio}-{restaurante.valor_entrega} <br/>
-          <br/>
+            {restaurante.nome} <br />
+            {restaurante.distancia} km<br />
+            <img className="star_logo" src="https://cdn-icons-png.flaticon.com/512/148/148841.png" alt="star_logo" />{restaurante.nota} <br />
+            {restaurante.tempo_medio}-{restaurante.valor_entrega} <br />
+            <br />
           </div>
-          
-          
+
+
         </div>
       ))}
     </Container>
