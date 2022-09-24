@@ -17,6 +17,8 @@ function CardapioPage() {
     const [nome, setNome] = useState()
     const [descricao, setDescricao] = useState()
     const [distancia, setDistancia] = useState()
+    const [endereco, setEndereco] = useState()
+    const [imagem, setImagem] = useState()
 	const [loading, setLoading] = useState(true);
     const url = window.location.href;
     const idDetalhes = url.split("/")[4];
@@ -28,6 +30,7 @@ function CardapioPage() {
           setNome(response.nome)
           setDescricao(response.descricao)
           setDistancia(response.distancia)
+          setEndereco(response.endereco)
           setLoading(false);
         })
       }, );
@@ -35,8 +38,14 @@ function CardapioPage() {
       console.log(cardapio)
 
 	return (
-
-        <p>{cardapio.descricao} e {cardapio.distancia}</p>
+        <div>
+            <p>{cardapio.descricao}</p> 
+            <p>{cardapio.distancia} km</p>
+            <p>{cardapio.endereco} </p>
+            <p>{cardapio.descricao} </p>
+            <p>{cardapio.descricao} </p>
+            <p>{cardapio.descricao}</p>
+        </div>
 		
 	);
 }
