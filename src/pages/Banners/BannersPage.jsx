@@ -42,6 +42,15 @@ function BannersPage() {
     );
   }
 
+  if ((selectedBanner?.nome).includes("UNTER")){
+    selectedBanner.imagem = "https://i.imgur.com/MySVZSx.png";
+    selectedBanner.nome = "HOJE EU COMEÇO";
+    selectedBanner.descricao = "Cupom hoje eu começo: Promoção válida na primeira compra bem-sucedida em restaurantes selecionados. Apenas válido para compras pelo site. Válido apenas uma vez por CPF. Compra mínima de 50 reais para utilização do cupom, tendo um valor máximo de 20 reais de desconto. Válido enquanto estiverem cupons disponíveis.";
+    selectedBanner.subtitulo = "15% de desconto em restaurantes de comida saudável";
+   
+
+  }
+
   return (
     <div className="full-height" style={{backgroundColor: selectedBanner['background-color']}}>
       <Container>
@@ -80,7 +89,6 @@ function BannersPage() {
             <ArrowForwardIos />
           </Fab>
         </div>
-
       </Container>
       <img className="main-image" src={selectedBanner.imagem} alt={selectedBanner.nome} />
     </div>
